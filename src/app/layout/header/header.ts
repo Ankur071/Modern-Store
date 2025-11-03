@@ -5,8 +5,10 @@ import { MatToolbar } from '@angular/material/toolbar'
   selector: 'app-header',
   imports: [MatToolbar],
   template: `
-    <mat-toolbar>
+    <mat-toolbar class="w-full elevated py-2">
+      <div class="max-w-[1200px] mx-auto w-full">
       Modern Store
+      </div>
     </mat-toolbar>
       
   `,
