@@ -14,6 +14,12 @@ import { Product } from '../../models/product';
             <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
               {{ product().name }}
             </h3>
+            <p class="text-sm text-gray-600 mb-4 flex-1 leading-relaxed">
+              {{ product().description }}
+            </p>
+
+             <!-- add rating component -->
+              
           </div>
         </div>
   `,
