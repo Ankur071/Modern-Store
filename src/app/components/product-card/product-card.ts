@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
 import { Product } from '../../models/product';
+import { MatAnchor } from "@angular/material/button";
+import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  imports: [MatAnchor, MatIcon],
   template: `
     <div
           class="bg-white cursor-pointer rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
@@ -19,7 +21,16 @@ import { Product } from '../../models/product';
             </p>
 
              <!-- add rating component -->
-              
+             <div class="text-sm font-medium mb-4">
+                 {{ product().inStock ? 'In Stock' : 'Out of Stock' }}
+             </div> 
+             <div class="flex items-center justify-between mt-auto">
+               <span class="text-2xl font-bold text-gray-900"> \${{ product().price}}</span>
+               <button matButton="filled" class="flex items-center gap-2">
+                <mat-icon>shopping_cart</mat-icon>
+                Add to Cart
+               </button>
+             </div>
           </div>
         </div>
   `,
