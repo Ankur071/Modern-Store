@@ -1,25 +1,16 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductCard } from '../../components/product-card/product-card';
 
 @Component({
   selector: 'app-products-grid',
-  imports: [],
+  imports: [ProductCard],
   template: `
-    <div class="bg-gray-100 p-6">
+    <div class="bg-gray-100 p-6 h-full">
       <h1 class="text-2xl font-bold text-gray-900 mb-6">{{ category() }}</h1>
       <div class="responsive-grid">
         @for (product of filteredProducts(); track product.id) {
-        <div
-          class="bg-white cursor-pointer rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
-        >
-          <img [src]="product.imageUrl" class="w-full h-[300px] object-cover rounded-t-xl" />
-
-          <div class="p-5 flex flex-col flex-1">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-              {{ product.name }}
-            </h3>
-          </div>
-        </div>
+        <app-product-card [product]="product" />
         }
       </div>
     </div>
@@ -55,10 +46,10 @@ export default class ProductsGrid {
     },
     {
       id: '3',
-      name: 'Laptop Stand',
-      description: 'Ergonomic aluminum laptop stand with adjustable height',
-      price: 49.99,
-      imageUrl: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500',
+      name: 'Professional Camera',
+      description: 'Mirrorless camera with 24MP sensor and 4K video recording',
+      price: 1299.99,
+      imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500',
       rating: 4.7,
       reviewCount: 256,
       inStock: true,
@@ -201,10 +192,10 @@ export default class ProductsGrid {
     },
     {
       id: '16',
-      name: 'Kitchen Knife Set',
-      description: 'Professional 8-piece stainless steel knife set with block',
-      price: 149.99,
-      imageUrl: 'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=500',
+      name: 'Table Lamp',
+      description: 'Modern LED desk lamp with adjustable brightness and color temperature',
+      price: 54.99,
+      imageUrl: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500',
       rating: 4.9,
       reviewCount: 534,
       inStock: true,
@@ -212,7 +203,10 @@ export default class ProductsGrid {
     },
   ]);
 
-  filteredProducts = computed(() =>
-    this.products().filter((p) => p.category === this.category().toLowerCase())
-  );
+  filteredProducts = computed(() => {
+    if (this.category() === 'all') {
+      return this.products();
+    }
+    return this.products().filter((p) => p.category === this.category().toLowerCase());
+  });
 }
