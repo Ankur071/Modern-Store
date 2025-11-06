@@ -48,5 +48,7 @@ export default class ProductsGrid {
   store = inject(EcommerceStore);
 
   categories = signal<string[]>(['all', 'electronics', 'clothing', 'accessories', 'home']);
-  
+   constructor() {
+    this.store.setCategory(this.category);
+   }
 }
