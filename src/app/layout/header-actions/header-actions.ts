@@ -14,11 +14,11 @@ import { EcommerceStore } from '../../ecommerce-store';
         matIconButton
         routerLink="/wishlist"
         [matBadge]="store.wishlistCount()"
-        [matBadgeHidden]="store.wishlistCount() == +0"
+        [matBadgeHidden]="store.wishlistCount() === 0"
       >
         <mat-icon>favorites</mat-icon>
       </button>
-      <button matIconButton>
+      <button matIconButton [matBadge]="store.cartCount()" [matBadgeHidden]="store.cartCount() === 0">
         <mat-icon>shopping_cart</mat-icon>
       </button>
       <button matButton>Sign In</button>
