@@ -4,7 +4,7 @@ import { EcommerceStore } from '../../ecommerce-store';
 import { ProductCard } from '../../components/product-card/product-card';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton, MatAnchor } from '@angular/material/button';
-import { EmptyWishlist } from "./empty-wishlist/empty-wishlist";
+import { EmptyWishlist } from './empty-wishlist/empty-wishlist';
 
 @Component({
   selector: 'app-my-wishlist',
@@ -34,11 +34,10 @@ import { EmptyWishlist } from "./empty-wishlist/empty-wishlist";
         <button matButton="outlined" class="danger" (click)="store.clearWishlist()">
           Clear Wishlist
         </button>
-
       </div>
       }@else {
-        <app-empty-wishlist />
-       }
+      <app-empty-wishlist />
+      }
     </div>
   `,
   styles: ``,

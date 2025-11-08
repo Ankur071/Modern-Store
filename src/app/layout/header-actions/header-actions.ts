@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { MatBadge } from '@angular/material/badge'
+import { MatBadge } from '@angular/material/badge';
 import { EcommerceStore } from '../../ecommerce-store';
 
 @Component({
@@ -10,7 +10,12 @@ import { EcommerceStore } from '../../ecommerce-store';
   imports: [MatButton, MatIconButton, MatIcon, RouterLink, MatBadge],
   template: `
     <div class="flex items-center gap-2">
-      <button matIconButton routerLink="/wishlist" [matBadge]="store.wishlistCount()" [matBadgeHidden]="store.wishlistCount() ==+ 0">
+      <button
+        matIconButton
+        routerLink="/wishlist"
+        [matBadge]="store.wishlistCount()"
+        [matBadgeHidden]="store.wishlistCount() == +0"
+      >
         <mat-icon>favorites</mat-icon>
       </button>
       <button matIconButton>
@@ -18,7 +23,6 @@ import { EcommerceStore } from '../../ecommerce-store';
       </button>
       <button matButton>Sign In</button>
       <button matButton="filled">Sign Up</button>
-      
     </div>
   `,
   styles: ``,

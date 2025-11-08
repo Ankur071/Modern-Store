@@ -7,11 +7,11 @@ import { inject, Injectable } from '@angular/core';
 export class Toaster {
   toaster = inject(HotToastService);
 
-  success(message: string){
+  success(message: string) {
     this.toaster.success(message);
   }
 
-  error(message: string){
+  error(message: string) {
     this.toaster.error(message);
   }
 }

@@ -3,7 +3,6 @@ import { Product } from '../../models/product';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
-
 @Component({
   selector: 'app-product-card',
   imports: [MatAnchor, MatIcon],
@@ -13,7 +12,7 @@ import { MatIcon } from '@angular/material/icon';
     >
       <img [src]="product().imageUrl" class="w-full h-[300px] object-cover rounded-t-xl" />
 
-      <ng-content />  
+      <ng-content />
       <div class="p-5 flex flex-col flex-1">
         <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
           {{ product().name }}
@@ -46,5 +45,4 @@ export class ProductCard {
   product = input.required<Product>();
 
   addToCartClicked = output<Product>();
-  
 }
