@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
       </div>
       <div class="flex items-center gap-3">
         <button matButton routerLink="/wishlist">View All</button>
-        <button matButton="filled" class="flex-items-center gap-2">
+        <button matButton="filled" class="flex-items-center gap-2" (click)="store.addAllWishlistToCart()">
           <mat-icon>shopping_cart</mat-icon>
           Add All to Cart
         </button>
