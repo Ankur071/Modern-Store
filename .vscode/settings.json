@@ -1,11 +1,3 @@
 {
-  "git.ignoreLimitWarning": true,
-  "files.exclude": {
-    "**/.angular": true,
-    "**/node_modules": true
-  },
-  "files.watcherExclude": {
-    "**/.angular/**": true,
-    "**/node_modules/**": true
-  }
+  "git.ignoreLimitWarning": true
 }
