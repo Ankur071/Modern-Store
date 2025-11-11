@@ -258,8 +258,19 @@ export const EcommerceStore = signalStore(
         });
       });
 
-      patchState(store, { cartItems: updatedCartItems })
-      toaster.success(existingItemIndex !== -1 ? 'Product added again' : 'Product added to the cart')
+      patchState(store, { cartItems: updatedCartItems });
+      toaster.success(
+        existingItemIndex !== -1 ? 'Product added again' : 'Product added to the cart'
+      );
+    },
+
+    setItemQuantity(params: { productId: string; quantity: number }) {
+      const index = store.cartItems().findIndex((c) => c.product.id === params.productId);
+      const updated = produce(store.cartItems(), (draft) => {
+        draft[index].quantity = params.quantity;
+      });
+
+      patchState(store, { cartItems: updated });
     },
   }))
 );
