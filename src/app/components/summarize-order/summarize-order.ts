@@ -22,6 +22,8 @@ import { EcommerceStore } from '../../ecommerce-store';
           <span>$ {{ total() }}</span>
         </div>
       </div>
+
+      <ng-content select="[actionButtons]" />
     </div>
   `,
   styles: ``,

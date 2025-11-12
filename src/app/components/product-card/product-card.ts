@@ -14,6 +14,7 @@ import { EcommerceStore } from '../../ecommerce-store';
       <img [src]="product().imageUrl" class="w-full h-[300px] object-cover rounded-t-xl" />
 
       <ng-content />
+      
       <div class="p-5 flex flex-col flex-1">
         <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
           {{ product().name }}
