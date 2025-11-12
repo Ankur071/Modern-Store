@@ -1,6 +1,6 @@
-# 🛒 Angular E-Commerce Store
+# 🛒 Modern Store (Angular E-Commerce Store)
 
-A modern, fully-featured e-commerce application built with **Angular 19**, **NgRx Signal Store**, **Angular Material**, and **TailwindCSS**.
+A modern, fully-featured e-commerce application built with **Angular 20**, **NgRx Signal Store**, **Angular Material**, and **TailwindCSS**.
 
 ![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
