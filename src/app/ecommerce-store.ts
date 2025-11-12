@@ -11,6 +11,8 @@ import {
 } from '@ngrx/signals';
 import { produce } from 'immer';
 import { CartItem } from './models/cart';
+import { MatDialog } from '@angular/material/dialog';
+import { SignInDialog } from './components/sign-in-dialog/sign-in-dialog';
 
 export type EcommerceState = {
   products: Product[];
@@ -218,7 +220,7 @@ export const EcommerceStore = signalStore(
     wishlistCount: computed(() => wishlistItems().length),
     cartCount: computed(() => cartItems().reduce((acc, item) => acc + item.quantity, 0)),
   })),
-  withMethods((store, toaster = inject(Toaster)) => ({
+  withMethods((store, toaster = inject(Toaster), dialog = inject(MatDialog)) => ({
     setCategory: signalMethod<string>((category: string) => {
       patchState(store, { category });
     }),
@@ -299,5 +301,11 @@ export const EcommerceStore = signalStore(
         cartItems: store.cartItems().filter((c) => c.product.id !== product.id),
       });
     },
+
+    proceedToCheckout: () =>{
+      dialog.open(SignInDialog, {
+        disableClose: true,
+      })
+    }
   }))
 );
