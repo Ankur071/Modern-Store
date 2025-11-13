@@ -3,9 +3,10 @@
 A modern, fully-featured e-commerce application built with **Angular 20**, **NgRx Signal Store**, **Angular Material**, and **TailwindCSS**.
 
 ![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-06B6D4?logo=tailwindcss)
-![NgRx](https://img.shields.io/badge/NgRx-18-purple?logo=ngrx)
+![Angular Material](https://img.shields.io/badge/Angular%20Material-20.2.11-red?logo=angular&logoColor=white).
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue?logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.17-06B6D4?logo=tailwindcss)
+![NgRx](https://img.shields.io/badge/NgRx-20.1.0-purple?logo=ngrx)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## ✨ Features
@@ -16,7 +17,7 @@ A modern, fully-featured e-commerce application built with **Angular 20**, **NgR
 - **Product Cards** - Responsive product cards with images, ratings, and reviews
 - **Product Details** - Detailed product information with add to cart/wishlist options
 
-### ❤️ Wishlist Management
+### 🤍 Wishlist Management
 - **Add to Wishlist** - Save favorite products for later
 - **Wishlist Page** - Dedicated page to view all wishlist items
 - **Bulk Actions** - Add all wishlist items to cart at once
@@ -266,4 +267,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   
 ---
 
-**Made with ❤️ using Angular**
+**Made with 🤍 using Angular**
