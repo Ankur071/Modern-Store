@@ -3,7 +3,7 @@
 A modern, fully-featured e-commerce application built with **Angular 20**, **NgRx Signal Store**, **Angular Material**, and **TailwindCSS**.
 
 ![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
-![Angular Material](https://img.shields.io/badge/Angular%20Material-20.2.11-red?logo=angular&logoColor=white).
+![Angular Material](https://img.shields.io/badge/Angular%20Material-20.2.11-2196F3?logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue?logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.17-06B6D4?logo=tailwindcss)
 ![NgRx](https://img.shields.io/badge/NgRx-20.1.0-purple?logo=ngrx)
