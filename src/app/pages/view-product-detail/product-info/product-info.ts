@@ -1,8 +1,8 @@
 import { TitleCasePipe } from '@angular/common';
 import { Product } from './../../../models/product';
 import { Component, inject, input, signal } from '@angular/core';
-import { StockStatus } from "../stock-status/stock-status";
-import { QtySelector } from "../../../components/qty-selector/qty-selector";
+import { StockStatus } from '../stock-status/stock-status';
+import { QtySelector } from '../../../components/qty-selector/qty-selector';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { ToggleWishlistButton } from '../../../components/toggle-wishlist-button/toggle-wishlist-button';
@@ -11,13 +11,13 @@ import { EcommerceStore } from '../../../ecommerce-store';
 @Component({
   selector: 'app-product-info',
   imports: [
-    TitleCasePipe, 
-    StockStatus, 
-    QtySelector, 
-    MatButton, 
-    MatIconButton, 
-    MatIcon, 
-    ToggleWishlistButton
+    TitleCasePipe,
+    StockStatus,
+    QtySelector,
+    MatButton,
+    MatIconButton,
+    MatIcon,
+    ToggleWishlistButton,
   ],
   template: `
     <div class="text-xs rounded-xl bg-gray-100 px-2 py-1 w-fit mb-2">
@@ -46,6 +46,22 @@ import { EcommerceStore } from '../../../ecommerce-store';
       <button matIconButton>
         <mat-icon>share</mat-icon>
       </button>
+    </div>
+
+    <!-- Additional Product Details -->
+    <div class="pt-6 flex flex-col gap-2 text-gray-700 text-xs">
+      <div class="flex items-center gap-3">
+        <mat-icon class="small">local_shipping</mat-icon>
+        <span>Free shipping on orders over $50</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <mat-icon class="small">autorenew</mat-icon>
+        <span>30-day return policy</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <mat-icon class="small">shield</mat-icon>
+        <span>2-year warranty included</span>
+      </div>
     </div>
   `,
   styles: ``,
