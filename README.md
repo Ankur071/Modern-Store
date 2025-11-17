@@ -18,7 +18,7 @@ This project demonstrates a production-ready e-commerce platform with 32 product
 
 ### Product Management
 
-- Browse 32 curated products across Electronics, Clothing, Accessories, and Home categories
+- Browse curated products across Electronics, Clothing, Accessories, and Home categories
 - Dynamic category filtering with real-time updates
 - Detailed product pages with specifications, ratings, and stock status
 - Responsive product cards with hover effects and animations
