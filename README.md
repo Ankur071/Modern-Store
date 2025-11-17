@@ -1,87 +1,89 @@
-# 🛒 Modern Store (Angular E-Commerce Store)
+# 🛒 Modern Store
 
-A modern, fully-featured e-commerce application built with **Angular 20**, **NgRx Signal Store**, **Angular Material**, and **TailwindCSS**.
+A full-stack e-commerce application built with **Angular 20**, featuring modern state management, responsive design, and a complete shopping experience.
 
 ![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
-![Angular Material](https://img.shields.io/badge/Angular%20Material-20.2.11-2196F3?logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue?logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.17-06B6D4?logo=tailwindcss)
+![Angular Material](https://img.shields.io/badge/Angular%20Material-20.2.11-2196F3?logo=angular&logoColor=white)
 ![NgRx](https://img.shields.io/badge/NgRx-20.1.0-purple?logo=ngrx)
-![License](https://img.shields.io/badge/License-MIT-green)
 
-## ✨ Features
+## 🎯 Project Overview
 
-### 🛍️ Shopping Experience
-- **Product Catalog** - Browse products across multiple categories (Electronics, Clothing, Accessories, Home)
-- **Category Filtering** - Filter products by category with a clean UI
-- **Product Cards** - Responsive product cards with images, ratings, and reviews
-- **Product Details** - Detailed product information with add to cart/wishlist options
+This project demonstrates a production-ready e-commerce platform with 32 products across 4 categories, implementing industry-standard patterns and best practices for Angular development.
 
-### 🤍 Wishlist Management
-- **Add to Wishlist** - Save favorite products for later
-- **Wishlist Page** - Dedicated page to view all wishlist items
-- **Bulk Actions** - Add all wishlist items to cart at once
-- **Move Between Cart & Wishlist** - Seamlessly move products between cart and wishlist
+**Live Demo:** [https://modern-store-xg.vercel.app/](#) | **Source Code:** [https://github.com/Ankur071/Modern-Store](#)
 
-### 🛒 Shopping Cart
-- **Add to Cart** - Add products with quantity selection
-- **Quantity Management** - Increase/decrease quantities or remove items
-- **Cart Summary** - Real-time cart total calculation
-- **Persistent State** - Cart and wishlist persist across sessions
-- **Empty State** - Beautiful empty cart/wishlist states
+## ✨ Core Features
 
-### 👤 User Authentication
-- **Sign In/Sign Up Dialogs** - Material Design authentication forms
-- **Form Validation** - Email, password strength, and confirmation validation
-- **User Profile** - Display user avatar and information in header
-- **Session Management** - Sign in/out functionality
-- **Protected Checkout** - Redirect to sign-in if not authenticated
+### Product Management
 
-### 💳 Checkout Flow
-- **Order Summary** - Review cart items before checkout
-- **Authentication Gate** - Require sign-in before proceeding
-- **Success Page** - Order confirmation page
+- Browse 32 curated products across Electronics, Clothing, Accessories, and Home categories
+- Dynamic category filtering with real-time updates
+- Detailed product pages with specifications, ratings, and stock status
+- Responsive product cards with hover effects and animations
 
-### 🎨 UI/UX
-- **Responsive Design** - Mobile-first design with TailwindCSS
-- **Material Design** - Angular Material components throughout
-- **Toast Notifications** - User feedback for all actions
-- **Loading States** - Smooth loading indicators
-- **Icon System** - Material Icons for consistent iconography
-- **Custom Directives** - ViewPanel directive for consistent page layouts
+### Shopping Experience
 
-## 🚀 Tech Stack
+- **Shopping Cart** - Add/remove items, adjust quantities, persistent storage
+- **Wishlist** - Save favorites, bulk add to cart, move between cart and wishlist
+- **Smart Search** - Category-based filtering with instant results
+- **Stock Management** - Real-time stock status indicators
 
-- **Framework**: Angular 20 (Standalone Components)
-- **State Management**: NgRx Signal Store
-- **UI Components**: Angular Material 20.2.11
-- **Styling**: TailwindCSS 4.x
-- **Forms**: Reactive Forms with Validation
-- **Routing**: Angular Router with Component Input Binding
-- **Immutability**: Immer.js for state updates
-- **Notifications**: ngx-hot-toast
-- **Icons**: Material Icons
-- **TypeScript**: 5.x with strict mode
+### User Authentication
 
-## 📦 Installation
+- Secure sign-in/sign-up with form validation
+- Session persistence with local storage
+- Protected checkout routes requiring authentication
+- User profile display with avatar and dropdown menu
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/ng-ecommerce.git
+### Checkout Process
 
-# Navigate to project directory
-cd ng-ecommerce
+- **Shipping Form** - Validated address collection (name, address, city, state, zip)
+- **Payment Integration** - Stripe-ready payment form
+- **Order Summary** - Real-time cart totals and item review
+- **Success Page** - Order confirmation with email notification message
 
-# Install dependencies
-npm install
+## 🛠️ Technical Stack
 
-# Start development server
-ng serve
+| Category             | Technology          | Purpose                                         |
+| -------------------- | ------------------- | ----------------------------------------------- |
+| **Framework**        | Angular 20          | Standalone components, signals, latest features |
+| **State Management** | NgRx Signal Store   | Reactive state with computed values             |
+| **UI Components**    | Angular Material 20 | Material Design components                      |
+| **Styling**          | TailwindCSS 4       | Utility-first responsive design                 |
+| **Forms**            | Reactive Forms      | Validation and form handling                    |
+| **Routing**          | Angular Router      | View transitions, input binding                 |
+| **Notifications**    | ngx-hot-toast       | User feedback system                            |
+| **Immutability**     | Immer.js            | Simplified state updates                        |
+
+## 🏗️ Architecture & Design Patterns
+
+### State Management
+
+- **Centralized Store** using NgRx Signal Store
+- **Computed Signals** for derived state (filtered products, cart count, totals)
+- **Side Effects** managed through store methods
+- **Persistent Storage** using `withStorageSync` for cart and wishlist
+
+### Component Structure
+
+```
+Standalone Components (No NgModules)
+├── Smart Components (Container) - Handle business logic
+├── Presentational Components - Pure display logic
+├── Reusable Components - Shared UI elements
+└── Layout Components - Page structure
 ```
 
-Open your browser and navigate to `http://localhost:4200`
+### Code Quality
 
-## 🏗️ Project Structure
+- TypeScript strict mode enabled
+- Reactive programming with RxJS and Signals
+- Custom directives for reusable behavior
+- Proper separation of concerns
+
+## 📂 Project Structure
 
 ```
 src/
@@ -101,15 +103,24 @@ src/
 │   │   └── header-actions/
 │   ├── models/              # TypeScript interfaces
 │   │   ├── cart.ts
+│   │   ├── order.ts
 │   │   ├── product.ts
 │   │   └── user.ts
 │   ├── pages/               # Page components
 │   │   ├── checkout/
+│   │   │   ├── payment-form/
+│   │   │   └── shipping-form/
 │   │   ├── my-wishlist/
+│   │   │   └── empty-wishlist/
 │   │   ├── order-success/
 │   │   ├── products-grid/
 │   │   ├── show-cart-item/
-│   │   └── view-cart/
+│   │   ├── view-cart/
+│   │   │   ├── list-cart-items/
+│   │   │   └── tease-wishlist/
+│   │   └── view-product-detail/
+│   │       ├── product-info/
+│   │       └── stock-status/
 │   ├── services/            # Services
 │   │   └── toaster.ts
 │   ├── app.config.ts        # App configuration
@@ -121,150 +132,153 @@ src/
 └── styles.scss
 ```
 
-## 🔧 Configuration
+## 🚀 Getting Started
 
-### Material Design Theme
+### Prerequisites
 
-Customized Material theme in `app.config.ts`:
+- Node.js 18+ and npm
+- Angular CLI 20+
 
-```typescript
-{
-  provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-  useValue: {
-    appearance: 'outline',
-    subscriptSizing: 'dynamic',
-    floatLabel: 'auto',
-  }
-}
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/Ankur071/Modern-Store.git
+cd ng-ecommerce
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
 ```
 
-### TailwindCSS
+Application will run at `http://localhost:4200`
 
-Custom Tailwind configuration with Material color palette integration.
+### Build for Production
 
-## 📱 Key Components
+```bash
+npm run build
+```
 
-### Signal Store (State Management)
+Output will be in `dist/` directory, optimized and ready for deployment.
+
+## 💡 Key Implementation Highlights
+
+### Signal Store Pattern
 
 ```typescript
 export const EcommerceStore = signalStore(
-  withState({
-    products: [...],
-    category: 'all',
-    wishlistItems: [],
-    cartItems: [],
-    user: undefined,
-    loading: false,
-  }),
-  withComputed(...),
-  withMethods(...)
+  withState({ products, cartItems, wishlistItems, user, loading }),
+  withComputed(({ products, category }) => ({
+    filteredProducts: computed(() =>
+      category() === 'all' ? products() : products().filter((p) => p.category === category())
+    ),
+  })),
+  withMethods((store) => ({
+    addToCart: (product, quantity) => {
+      /* logic */
+    },
+    signIn: ({ email, password }) => {
+      /* authentication */
+    },
+  }))
 );
 ```
 
-### Product Card with Content Projection
+### View Transitions
 
 ```typescript
-<app-product-card [product]="product">
-  <app-toggle-wishlist-button 
-    class="!absolute z-10 top-3 right-3" 
-    [product]="product" 
-  />
-</app-product-card>
+provideRouter(
+  routes,
+  withComponentInputBinding(),
+  withViewTransitions() // Smooth page transitions
+);
 ```
 
-### Reactive Forms with Validation
+### Form Validation
 
 ```typescript
-signInForm = this.fb.group({
+shippingForm = this.fb.group({
+  firstName: ['', Validators.required],
   email: ['', [Validators.required, Validators.email]],
-  password: ['', [Validators.required, Validators.minLength(6)]],
+  zipCode: ['', [Validators.required, Validators.pattern(/^\d{5}$/)]],
 });
 ```
 
-## 🎯 Features in Detail
+## 📊 Features Breakdown
 
-### State Management with NgRx Signals
+| Feature           | Status      | Description                                |
+| ----------------- | ----------- | ------------------------------------------ |
+| Product Catalog   | ✅ Complete | 32 products with images, ratings, prices   |
+| Category Filter   | ✅ Complete | Electronics, Clothing, Accessories, Home   |
+| Product Detail    | ✅ Complete | Full specifications, stock status, reviews |
+| Shopping Cart     | ✅ Complete | Add, remove, update quantities             |
+| Wishlist          | ✅ Complete | Save items, bulk operations                |
+| Authentication    | ✅ Complete | Sign in/up with validation                 |
+| Checkout          | ✅ Complete | Shipping & payment forms                   |
+| Order Success     | ✅ Complete | Confirmation page                          |
+| View Transitions  | ✅ Complete | Smooth page animations                     |
+| Responsive Design | ✅ Complete | Mobile-first approach                      |
+| State Persistence | ✅ Complete | Local storage sync                         |
 
-- **Reactive State**: All state changes are signals for optimal change detection
-- **Computed Values**: Derived state (filtered products, cart count, wishlist count)
-- **Immutable Updates**: Using Immer.js for clean state mutations
-- **Methods**: Encapsulated business logic in store methods
+## 🎨 UI/UX Features
 
-### Authentication Flow
+- **Material Design** - Consistent design language
+- **Responsive Layout** - Works on all screen sizes
+- **Toast Notifications** - Real-time user feedback
+- **Loading States** - Smooth loading indicators
+- **Empty States** - Beautiful empty cart/wishlist displays
+- **Form Validation** - Real-time error messages
+- **Smooth Animations** - View transitions between pages
 
-1. User clicks "Proceed to Checkout" or "Sign In"
-2. Sign-in dialog opens with form validation
-3. On successful sign-in, user data is stored in state
-4. User avatar appears in header with dropdown menu
-5. Checkout flow continues if initiated from cart
+## 🔐 Security Considerations
 
-### Cart Management
+- Form validation on client-side (ready for backend integration)
+- CSRF protection ready
+- XSS protection through Angular sanitization
+- Secure password handling (min 6 characters, ready for hashing)
 
-- Add products with quantity selection
-- Update quantities with +/- buttons
-- Remove individual items
-- Move items to wishlist
-- Real-time price calculations
-- Persistent across page refreshes
+## 📈 Performance Optimizations
 
-## 🚧 Development
+- OnPush change detection strategy ready
+- Lazy loading routes (expandable)
+- Signal-based reactivity for minimal re-renders
+- Optimized bundle size with standalone components
+- Image lazy loading capability
+
+## 🚧 Future Enhancements
+
+- [ ] Backend API integration
+- [ ] Real payment gateway integration (Stripe)
+- [ ] Product search functionality
+- [ ] Order history page
+- [ ] Product reviews and ratings
+- [ ] Email notifications
+- [ ] Advanced filtering (price range, ratings)
+- [ ] Internationalization (i18n)
+
+## 📝 Development Scripts
 
 ```bash
-# Run development server
-ng serve
-
-# Build for production
-ng build --configuration production
-
-# Run tests
-ng test
-
-# Lint code
-ng lint
+npm start          # Development server
+npm run build      # Production build
+npm test           # Run unit tests
+npm run lint       # Code linting
 ```
 
-## 📄 Scripts
+## 👨‍💻 Developer
 
-```json
-{
-  "start": "ng serve",
-  "build": "ng build",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
-}
-```
+**Ankur Yadav**  
+Full Stack Developer | Angular Specialist
 
-## 🌐 Environment
+[![GitHub](https://img.shields.io/badge/GitHub-Ankur071-181717?logo=github)](https://github.com/Ankur071)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/ankur-yadav-610943295/)
 
-Development server runs on `http://localhost:4200`
+## 📄 License
 
-## 🤝 Contributing
+This project is licensed under the MIT License.
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Ankur Yadav**
-- GitHub: [@Ankur071](https://github.com/Ankur071)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ankur-yadav-610943295/)
-
-## 🙏 Acknowledgments
-
-- Angular Team for the amazing framework
-- NgRx Team for Signal Store
-- Material Design for the design system
-- Unsplash for product images
-  
 ---
 
-**Made with 🤍 using Angular**
+**Built with Angular 20** | Demonstrates modern web development practices and enterprise-level architecture

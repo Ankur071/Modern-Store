@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
         appearance: 'outline',
         subscriptSizing: 'dynamic',
         floatLabel: 'auto',
-      }
-    }
+      },
+    },
   ],
 };
